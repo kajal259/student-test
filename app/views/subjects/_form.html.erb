@@ -1,0 +1,9 @@
+<%= form_with model: @subject do |form| %>
+	<div>
+		<%= form.label :sub_name %>
+		<%= form.text_field :sub_name %>
+	</div>
+	<div>
+		<%= form.submit %>	
+	</div>
+<% end %>

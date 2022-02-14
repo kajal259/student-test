@@ -1,0 +1,21 @@
+<h1>Subjects</h1>
+<table>
+  <thead>
+    <th>Subject Name</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+			<tr>
+				<td><%= subject.sub_name %></td>
+				<td><%= link_to "show", subject_path(subject.id) %></td>
+				<td><%= link_to "edit", edit_subject_path(subject.id)%></td>
+				<td><%= link_to "Destroy", subject_path(subject.id), data: {
+					turbo_method: :delete,
+					turbo_confirm: "Are you sure?"
+				} %></td>
+			</tr>
+    <% end %>
+      <td><%= link_to "new", new_subject_path %></td>
+   </tbody>
+</table> 
