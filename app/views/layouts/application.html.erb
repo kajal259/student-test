@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <% if admin_signed_in? %>
+      <%= link_to('Edit registration', edit_admin_registration_path) %>
+      <%= link_to('Logout', destroy_admin_session_path, method: :delete, 'data-turbo': false) %>
+    <% else %>
+      <%= link_to('Register', new_admin_registration_path) %>
+      <%= link_to('Login', new_admin_session_path) %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -13,6 +13,10 @@ gem "sprockets-rails"
 # gem "sqlite3", "~> 1.4"
 gem 'pg'
 
+#Use the Devise [https://github.com/heartcombo/devise/wiki]
+gem 'devise', github: 'heartcombo/devise', branch: 'main'
+
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
