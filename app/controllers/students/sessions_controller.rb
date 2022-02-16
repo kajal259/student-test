@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-class Admins::SessionsController < Devise::SessionsController
-  # include Accessible
-  # skip_before_action :check_resource, only: :destroy
- # before_action :configure_sign_in_params, only: [:create]
+class Students::SessionsController < Devise::SessionsController
+  # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -21,9 +19,8 @@ class Admins::SessionsController < Devise::SessionsController
   # end
   def after_sign_in_path_for(resource)
     super(resource)
-    subjects_path
+    dashboard_index_path
   end
-  
 
   # protected
 
