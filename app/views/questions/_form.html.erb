@@ -1,0 +1,14 @@
+<%= form_with model: @question do |form| %>
+	<div><br>
+		<%= form.label :name, "Question:-" %>
+		<%= form.text_field :name %>
+	</div><br>
+	<div>
+		<%= form.label :subject_id, "Subject Name:-"%>
+		<%= form.collection_select(:subject_id, Subject.all, :id, :sub_name) %>
+	</div><br>
+	<div>
+		<%= form.submit %>	
+	</div>
+<% end %>
+

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get "admins", to: "devise/sessins#new"
   end
  
-  
+  resources :questions
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # get "subjects#index"
