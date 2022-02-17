@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     when Student
       dashboard_index_path
     when Admin
-      subjects_path
+      admins_dashboard_index_path
     end
   end
 
