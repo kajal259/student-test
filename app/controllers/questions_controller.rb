@@ -40,10 +40,10 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.destroy
 
-    redirect_to @question
+    redirect_to root_path, status: :see_other
   end
   private
   def question_params
-    params.require(:question).permit(:name, :subject_id)
+    params.require(:question).permit(:name, :qtype, :subject_id)
   end
 end

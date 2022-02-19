@@ -2,14 +2,16 @@
 <table border = 1>
   <thead>
     <th>Question Name</th>
+    <th>Option_type</th>
     <th>Subject_name</th>
-		<th>Admin</th>
+  	<th>Admin</th>
 		<th>Action</th>
   </thead>
   <tbody>
     <% @questions.each do |question| %>
 			<tr>
 				<td><%= question.name %></td>
+        <td><%= question.qtype %></td>
 				<td><%= question.subject.sub_name %></td>
 				<td><%= question.admin.email %></td>
 				<td><%= link_to "show", question_path(question.id) %></td>

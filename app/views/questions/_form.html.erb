@@ -2,6 +2,7 @@
 	<div><br>
 		<%= form.label :name, "Question:-" %>
 		<%= form.text_field :name %>
+		<%= form.select :qtype, Question.qtypes.keys %><br>
 	</div><br>
 	<div>
 		<%= form.label :subject_id, "Subject Name:-"%>
@@ -11,4 +12,3 @@
 		<%= form.submit %>	
 	</div>
 <% end %>
-

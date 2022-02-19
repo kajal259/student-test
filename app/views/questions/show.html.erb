@@ -1,3 +1,9 @@
 <h1><%= @question.name %></h1>
 <p><%= @question.subject.sub_name %></p>
 <p><%= @question.admin.email %></p>
+
+<h2>Options</h2>
+<%= render @question.options %>
+
+<h2>Add a Option:</h2>
+<%= render 'options/form' %>

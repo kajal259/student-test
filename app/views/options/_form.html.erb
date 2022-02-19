@@ -1,0 +1,13 @@
+<%= form_with model: [ @question, @question.options.build ] do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p
+    <p>
+      <%= form.label :correct %><br>
+      <%= form.text_field :correct %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
