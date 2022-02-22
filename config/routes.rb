@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
  
   resources :questions do
-    resources :options
+    resources :options, module: :questions
   end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

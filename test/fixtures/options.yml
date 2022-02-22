@@ -2,8 +2,10 @@
 
 one:
   name: MyString
+  correct: false
   question: one
 
 two:
   name: MyString
+  correct: false
   question: two

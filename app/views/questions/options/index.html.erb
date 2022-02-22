@@ -1,0 +1,28 @@
+
+<p>Options</p>
+<table>
+  <thead>
+    <th>Option Name</th>
+    <th>Correct</th>
+    <th>Question</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @options.each do |option| %>
+			<tr>
+				<td><%= option.name %></td>
+        <td><%= option.correct%></td>
+        <td><%= option.question.name %></td>
+        <td><%= link_to "Show", question_option_path(@question.id, option.id) %></td>
+        <td><%= link_to "Edit", edit_question_option_path(@question.id, option.id) %></td>
+        <td><%= link_to "Destroy", question_option_path(@question.id,option.id), data: {
+					turbo_method: :delete,
+					turbo_confirm: "Are you sure?"
+				} %></td>
+			</tr>
+    <% end %>
+   </tbody>
+</table>
+<%= link_to "ADD", new_question_option_path(@question) %><br>
+<%= link_to "BACK", question_path(@question) %>
+
