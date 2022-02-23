@@ -5,7 +5,7 @@
 	</div><br>
     <div>
 		<%= form.label :correct %>
-		<%= form.select :correct,options_for_select([false, true]), class: 'form-control' %>
+		<%= form.select :correct, options_for_select(@option_values), class: 'form-control' %>
 	</div>
     
 	<div>

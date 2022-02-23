@@ -1,6 +1,7 @@
 class Questions::OptionsController < ApplicationController
 	before_action :find_question
   def index
+		@options = Option.all
 		# @options = Option.where(:question_id => @question.id)
 		p @options = Question.find(params[:question_id]).options
 		p @options.count
@@ -11,11 +12,15 @@ class Questions::OptionsController < ApplicationController
 	end
 
 	def new
+		@options = Question.find(params[:question_id]).options.pluck(:correct)
+		@option_values = [false, @options.include?(true) ? 'false' : true]
+		
 		@option = Option.new
 	end
 
 	def create
 		@option = Option.new(option_params.merge(question_id: params[:question_id]))
+	
 		
 		if @option.save
 			redirect_to question_options_path

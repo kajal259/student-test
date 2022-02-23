@@ -1,18 +1,20 @@
 
 <p>Options</p>
-<table>
+<%= link_to "Question list", question_options_path %>
+<table border = 1 >
   <thead>
+    <th>Question</th>
     <th>Option Name</th>
     <th>Correct</th>
-    <th>Question</th>
+    
     <th>Action</th>
   </thead>
   <tbody>
     <% @options.each do |option| %>
 			<tr>
+      <td><%= option.question.name %></td>
 				<td><%= option.name %></td>
         <td><%= option.correct%></td>
-        <td><%= option.question.name %></td>
         <td><%= link_to "Show", question_option_path(@question.id, option.id) %></td>
         <td><%= link_to "Edit", edit_question_option_path(@question.id, option.id) %></td>
         <td><%= link_to "Destroy", question_option_path(@question.id,option.id), data: {
