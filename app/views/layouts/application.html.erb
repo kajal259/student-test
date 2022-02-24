@@ -11,22 +11,35 @@
   </head>
 
   <body>
-    <% if admin_signed_in? %>
-      <%= link_to('Edit registration', edit_admin_registration_path) %>
-      <%= link_to('Logout', destroy_admin_session_path, method: :delete, 'data-turbo': false) %>
-    <% else %>
-      <%= link_to('Admin', new_admin_registration_path) %>
-      <%= link_to('Login', new_admin_session_path) %>
-    <% end %>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex flex-right">
+      <div class="p-2 mr-auto bg-info">
+        <% if admin_signed_in? %>
+          <%= link_to('Edit registration', edit_admin_registration_path) %>
+          <%= link_to('Logout', destroy_admin_session_path, method: :delete, 'data-turbo': false) %>
+        <% else %>
+          <%= link_to('Admin', new_admin_registration_path) %>
+          <%= link_to('Login', new_admin_session_path) %>
+        <% end %>
 
-    <% if student_signed_in? %>
-      <%= link_to('Edit registration', edit_student_registration_path) %>
-      <%= link_to('Logout', destroy_student_session_path, method: :delete, 'data-turbo': false) %>
-    <% else %>
-      <%= link_to('Student', new_student_registration_path) %>
-      <%= link_to('Login', new_student_session_path) %>
-    <% end %>
+        <% if student_signed_in? %>
+          <%= link_to('Edit registration', edit_student_registration_path) %>
+          <%= link_to('Logout', destroy_student_session_path, method: :delete, 'data-turbo': false) %>
+        <% else %>
+          <%= link_to('Student', new_student_registration_path) %>
+          <%= link_to('Login', new_student_session_path) %>
+        <% end %>
+      </div>
+    </div>
 
+  </nav>
+
+  <div class="container-xl">
     <%= yield %>
+  </div>
+    
   </body>
 </html>

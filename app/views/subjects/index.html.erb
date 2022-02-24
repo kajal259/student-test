@@ -1,6 +1,6 @@
 <h1>Admin</h1>
-<p>Subjects</p>
-<table>
+<h2>Subjects</h2>
+<table class="table table-striped">
   <thead>
     <th>Subject Name</th>
     <th>Action</th>
@@ -17,6 +17,11 @@
 				} %></td>
 			</tr>
     <% end %>
-      <td><%= link_to "new", new_subject_path %></td>
-   </tbody>
+  </tbody>
 </table>
+<div class="btn btn-info gap-3 col-1 mx-auto">
+  <%= link_to "new", new_subject_path, :class => 'btn' %>
+</div>
+<div class="btn btn-info gap-3 col-1 mx-auto">
+  <%= link_to "Back", admins_dashboard_index_path, :class => 'btn' %>
+</div>

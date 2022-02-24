@@ -1,3 +1,7 @@
-<h1>Admins Dashboard</h1>
-<%= link_to('Subject', subjects_path) %><br>
-<%= link_to('Question', questions_path)%>
+<h1 style="font-size: 1.5rem;">Admins Dashboard</h1>
+<div class="btn btn-info gap-3 col-1 mx-auto">
+  <%= link_to 'Subject', subjects_path(@subject), :class => 'btn' %> 
+</div><br><br> 
+<div class="btn btn-info gap-2 col-1 mx-auto">
+  <%= link_to 'Question', questions_path(@question), :class => "btn" %>
+</div>

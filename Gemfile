@@ -16,6 +16,8 @@ gem 'pg'
 #Use the Devise [https://github.com/heartcombo/devise/wiki]
 gem 'devise', github: 'heartcombo/devise', branch: 'main'
 
+gem 'bootstrap', '~> 5.1.3'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 
 # Use the Puma web server [https://github.com/puma/puma]
