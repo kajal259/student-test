@@ -1,10 +1,11 @@
 class Questions::OptionsController < ApplicationController
 	before_action :find_question
   def index
-		@options = Option.all
+		@options = 	Option.all
+
 		# @options = Option.where(:question_id => @question.id)
-		p @options = Question.find(params[:question_id]).options
-		p @options.count
+		 @options = Question.find(params[:question_id]).options
+		 @options.count
 	end
 
 	def show
@@ -12,8 +13,8 @@ class Questions::OptionsController < ApplicationController
 	end
 
 	def new
-		@options = Question.find(params[:question_id]).options.pluck(:correct)
-		@option_values = [false, @options.include?(true) ? 'false' : true]
+		# @options = Question.find(params[:question_id]).options.pluck(:correct)
+		# @option_values = [false, @options.include?(true) ? 'false' : true]
 		
 		@option = Option.new
 	end
