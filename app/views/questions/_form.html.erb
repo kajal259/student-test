@@ -3,8 +3,8 @@
 		<%= form.label :name, "Question:-" %>
 		<%= form.text_field :name %>
 		<%= form.select :qtype, Question.qtypes.keys %><br>
-	</div><br>
-	<div>
+  </div><br>
+	<div class="dropdown">
 		<%= form.label :subject_id, "Subject Name:-"%>
 		<%= form.collection_select(:subject_id, Subject.all, :id, :sub_name) %>
 	</div><br>

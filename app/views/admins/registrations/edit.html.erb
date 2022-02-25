@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: 'example@example.com' %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -32,12 +32,18 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+  <%= f.button "update", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary' %></p>
 
-<%= link_to "Back", :back %>
+
+
+<div class="btn btn-primary">
+  <%= link_to "Back", :back, :class => 'btn' %>
+</div>
+
+

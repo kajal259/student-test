@@ -3,8 +3,12 @@
 <p><%= @question.admin.email %></p>
 <% @options.each do |option| %>
     <%= option.name %><br>
+    <%= option.correct %><br><br>
 <% end %>
 
+<div class="btn btn-info gap-3 col-2 mx-auto">
+    <%= link_to "ADD Option", new_question_option_path(@question), :class => 'btn' %>
+</div>
 <div class="btn btn-info gap-3 col-1 mx-auto">
-    <%= link_to "ADD", new_question_option_path(@question), :class => 'btn' %>
+  <%= link_to "Back", questions_path, :class => 'btn' %>
 </div>

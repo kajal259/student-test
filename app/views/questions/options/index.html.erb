@@ -1,6 +1,5 @@
-
 <h1>Options</h1>
-<table border = 1 >
+<table class="table table-striped" >
   <thead>
     <th>Question</th>
     <th>Option Name</th>
@@ -24,6 +23,11 @@
     <% end %>
    </tbody>
 </table>
-<%= link_to "ADD", new_question_option_path(@question) %><br>
-<%= link_to "BACK", question_path(@question) %>
+ 
+<div class="btn btn-info gap-3 col-1 mx-auto">
+  <%= link_to "ADD", new_question_option_path(@question), :class => 'btn' %>
+</div>
+<div class="btn btn-info gap-3 col-1 mx-auto">
+  <%= link_to "BACK", question_path(@question), :class => 'btn' %>
+</div>
 

@@ -1,3 +1,9 @@
 <h1><%= @option.name %></h1>
 <p><%= @option.correct %></p>
 <p><%= @option.question.name %></p>
+
+<div class="btn btn-info gap-3 col-1 mx-auto">
+  <%= link_to "Back", question_options_path, :class => 'btn' %>
+</div>
+
+
