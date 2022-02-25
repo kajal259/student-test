@@ -19,7 +19,7 @@ class Students::SessionsController < Devise::SessionsController
   # end
   def after_sign_in_path_for(resource)
     super(resource)
-    dashboard_index_path
+    students_dashboard_path
   end
 
   # protected

@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
-	before_action :authenticate_admin!
+	before_action :authenticate_admin!, only: [:create, :update, :destroy]
+	before_action :authenticate_student!, only: [:show] 
 
 	def index
 		@subjects = Subject.all

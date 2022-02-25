@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource
     when Student
-      dashboard_index_path
+      students_dashboard_path
     when Admin
-      admins_dashboard_index_path
+      admins_dashboard_path
     end
   end
 
