@@ -1,0 +1,16 @@
+<h1>Questions</h1>
+<table class="table table-striped">
+  <thead>
+    <th>Question Name</th>
+    <th>Option_type</th>
+  </thead>
+  <tbody>
+    <% @quizzes.each do |quiz| %>
+			<tr>
+				<td><%= quiz.question.name %></td>
+				<td><%= question.option.name %></td>
+        <td><%= link_to "show", studenttest_path(studenttest.id) %></td>
+      </tr>
+    <% end %>
+   </tbody>
+</table>

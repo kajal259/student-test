@@ -1,0 +1,19 @@
+<%= form_with model: @quizzes do |form| %>
+	
+  <% @questions.each do |question| %>
+    
+      <%= question.name %><br>
+
+      
+      <% question.options.each do |o| %>
+        <%= check_box_tag :name, o %><%= o.name  %><br>
+      <% end %>
+  
+  <% end %>
+
+
+	<div>
+		<%= form.button "Submit", class: 'btn btn-primary' %>	
+	</div>
+<% end %>
+

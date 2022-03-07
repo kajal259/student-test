@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Studenttests</h1>
+
+
+<div id="studenttests">
+  <% @studenttests.each do |studenttest| %>
+    
+    <tr>
+				<td><%= studenttest.subject.sub_name %></td>
+				<td><%= studenttest.student.email %></td>
+				<td><%= link_to "show", studenttest_path(studenttest.id) %></td>
+        <td><%= link_to "edit", edit_studenttest_path(studenttest.id) %></td>
+        <td><%= link_to "Destroy", studenttest_path(studenttest.id), data: {
+					turbo_method: :delete,
+					turbo_confirm: "Are you sure?"
+				} %></td><br>
+      </tr>
+  <% end %>
+</div>
+
+<%= link_to "New studenttest", new_studenttest_path %>

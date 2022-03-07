@@ -1,0 +1,23 @@
+<%= form_with(model: studenttest) do |form| %>
+  <% if studenttest.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(studenttest.errors.count, "error") %> prohibited this studenttest from being saved:</h2>
+
+      <ul>
+        <% studenttest.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :subject_id, style: "display: block" %>
+    <%= form.collection_select(:subject_id, Subject.all, :id, :sub_name) %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
